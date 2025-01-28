@@ -21,8 +21,9 @@ import {
 
 const skills = [
   { name: 'PHP', level: 90 },
-  { name: 'TypeScript / JavaScript', level: 88 },
-  { name: 'SQL / NoSQL (MySQL, PostgreSQL, MongoDB)', level: 85 },
+  { name: 'C# & JAVA', level: 85 },
+  { name: 'TypeScript / JavaScript', level: 85 },
+  { name: 'SQL / NoSQL (MySQL, PostgreSQL, MongoDB)', level: 82 },
   { name: 'React', level: 80 },
   { name: 'Vue & Svelte', level: 70 },
   { name: 'Python (Flask, Django)', level:60 },
@@ -34,19 +35,30 @@ const experiences = [
     title: 'Développeur',
     company: 'FMC-ActioN',
     period: 'Septembre 2022 - Aujourd\'hui',
-    description: 'Développement et migration de solutions en PHP, JavaScript, SCSS. Conception d\'outils internes pour les salariés. Création d\'espaces personnels pour stagiaires et salariés.',
+    description: [
+      'Développement, intégration et migration de solutions en PHP, JavaScript, SCSS.',
+      'Conception d\'outils internes pour les salariés.',
+      'Création d\'espaces personnels dédiés aux stagiaires et aux salariés.',
+      'Collaboration  avec les équipes de communication et d\'inscription pour garantir la cohérence des outils développés.',
+      'Optimisation et refactorisation du code existant pour améliorer les performances.',
+    ],
   },
   {
     title: 'Cybersécurité & Développement (Stage)',
     company: 'Epita école d’ingénieur',
     period: 'Janvier 2022 - Février 2022',
-    description: 'Réalisation d\'un CTF en cybersécurité sur le thème médical avec Python et Flask. Sensibilisation à la cybersécurité.',
+    description: [
+      'Réalisation d’un CTF en cybersécurité sur le thème médical en utilisant Python et Flask.',
+      'Sensibilisation à la cybersécurité.',
+    ],
   },
   {
     title: 'Développeur Web (Stage)',
     company: 'Alsace Navette',
     period: 'Mai 2021',
-    description: 'Création et maintenance de sites web avec Symfony, WordPress et Drupal.',
+    description: [
+      'Création et maintenance de sites web avec Symfony, WordPress et Drupal.',
+    ],
   },
 ];
 
@@ -240,30 +252,34 @@ export function Home() {
           </h2>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <motion.div
-                key={exp.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-              >
-                <div className="flex flex-wrap justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                    <p className="text-blue-400">{exp.company}</p>
+                <motion.div
+                    key={exp.title}
+                    initial={{opacity: 0, x: -20}}
+                    whileInView={{opacity: 1, x: 0}}
+                    transition={{delay: index * 0.1}}
+                    viewport={{once: true}}
+                    className="bg-white/10 backdrop-blur-md rounded-lg p-6"
+                >
+                  <div className="flex flex-wrap justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                      <p className="text-blue-400">{exp.company}</p>
+                    </div>
+                    <span className="text-gray-300">{exp.period}</span>
                   </div>
-                  <span className="text-gray-300">{exp.period}</span>
-                </div>
-                <p className="text-gray-300">{exp.description}</p>
-              </motion.div>
+                  <ul>
+                    {exp.description.map((desc, index) => (
+                        <li key={index} className="text-gray-300">{desc}</li>
+                    ))}
+                  </ul>
+                </motion.div>
             ))}
           </div>
         </motion.section>
 
-        {/* Formation */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          {/* Formation */}
+          <motion.section
+              initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}

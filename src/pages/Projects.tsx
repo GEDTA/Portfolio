@@ -18,7 +18,7 @@ const projects = [
     description: 'Application mobile et site web permettant de gérer ses abonnements efficacement. Développé en utilisant React native, Next.js et MongoDB.',
     image: logo1,
     tags: ['React native', 'Next.js', 'Scss', 'MongoDB'],
-    github: '#',
+    github: 'https://github.com/aborganizr',
     demo: '#'
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     description: 'Pas besoin de décrire, vous y êtes ! Développé en utilisant React, Tailwind CSS et Framer Motion.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
     tags: ['React', 'Tailwind CSS', 'Framer Motion'],
-    github: '#',
+    github: 'https://github.com/GEDTA/Portfolio',
     demo: '#'
   },
 ];
@@ -71,6 +71,8 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
+                  {project.title !== 'Ged\'tech' && (
+                  <>
                   <a
                     href={project.github}
                     className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
@@ -78,6 +80,8 @@ export function Projects() {
                     <Github size={20} />
                     <span>Code</span>
                   </a>
+                  {project.title !== 'Aborganizr' && (
+                      <>
                   <a
                     href={project.demo}
                     className="flex items-center gap-2 text-white hover:text-blue-400 transition-colors"
@@ -85,6 +89,10 @@ export function Projects() {
                     <ExternalLink size={20} />
                     <span>Demo</span>
                   </a>
+                  </>
+)}
+                  </>
+                )}
                 </div>
               </div>
             </motion.div>
