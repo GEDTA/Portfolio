@@ -2,16 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import logo1 from '../img/Aborganizr.png';
-import logo2 from '../img/Gedtech.png';
+import logo2 from '../img/CNETMAUI.png';
 
 const projects = [
-  {
+
+    /*
+    {
+
     title: 'Ged\'tech',
     description: 'Projet en développement de micro-entreprise de services informatiques. Développement d\'applications web et mobiles sur mesure.',
     image: logo2,
     tags: ['Services informatiques', 'Développement web', 'Développement mobile','...'],
     github: '#',
     demo: '#'
+  },
+
+     */
+  {
+    title: 'Tower Defense C# .NET MAUI',
+    description: 'Projet de groupe en cours à CCI Campus.',
+    image: logo2,
+    tags: ['C#', 'MAUI', 'Tower Defense', 'Projet de groupe'],
+    github: '#',
+    demo: '#',
   },
   {
     title: 'Aborganizr',
@@ -71,7 +84,7 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  {project.title !== 'Ged\'tech' && (
+                  {project.title !== 'Ged\'tech' && project.title !== 'Tower Defense C# .NET MAUI'  && (
                   <>
                   <a
                     href={project.github}

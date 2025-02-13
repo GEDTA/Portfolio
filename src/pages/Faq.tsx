@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     question: "Travaillez-vous sur des projets freelance ?",
-    answer: "Actuellement, je suis en alternance, mais je suis ouvert aux opportunités qui correspondent à mes compétences et à mon emploi du temps."
+    answer: "Actuellement, je suis en alternance, je ne suis donc pas disponible pour des projets freelance."
   },
   {
     question: "Quels outils utilisez-vous pour vos projets ?",

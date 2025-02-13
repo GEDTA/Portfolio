@@ -90,10 +90,18 @@ const education = [
 ];
 
 const Projs = [
+    /*
   {
     name: 'Ged\'Tech',
     year: 'À venir',
     issuer: 'Auto-entreprise',
+  },
+
+     */
+  {
+    name: 'Tower Defense C# MAUI',
+    year: 'En cours',
+    issuer: 'CCI Campus (Projet de Groupe)',
   },
   {
     name: 'Projet fil rouge : Aborganizr (mobile & web)',
